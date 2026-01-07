@@ -1,4 +1,4 @@
-{
+export default {
   "arrowParens": "avoid",
   "semi": true,
   "singleQuote": false,

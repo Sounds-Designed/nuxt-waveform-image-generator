@@ -7,7 +7,7 @@
   "settings": {
     // Language-specific settings
     "[vue]": {
-      "editor.defaultFormatter": "Vue.volar"
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[json]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
