@@ -1,5 +1,5 @@
 import { addComponent, defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
-import type { ModuleOptions } from 'nuxt/schema'
+import type { ModuleOptions } from '@nuxt/schema'
 
 export type * from './runtime/types'
 
