@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.8
+
+[compare changes](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/compare/v0.0.7...v0.0.8)
+
+### 🩹 Fixes
+
+- Playground ([cd5145b](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/cd5145b))
+
+### ❤️ Contributors
+
+- Alex Scott ([@codetheorist](https://github.com/codetheorist))
+
 ## v0.0.7
 
 [compare changes](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/compare/v0.0.6...v0.0.7)
