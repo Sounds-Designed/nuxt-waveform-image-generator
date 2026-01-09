@@ -16,22 +16,22 @@ const items = computed(() => [
     to: { name: "index" },
     children: [],
   },
-  {
-    label: "Waveforms",
-    icon: "i-lucide-audio-waveform",
-    children: [
-      {
-        label: "Linear Paths",
-        icon: "i-lucide-audio-lines",
-        to: { name: "linear-paths" },
-      },
-      {
-        label: "Polar Paths",
-        icon: "i-lucide-radius",
-        to: { name: "polar-paths" },
-      },
-    ],
-  },
+  // {
+  //   label: "Waveforms",
+  //   icon: "i-lucide-audio-waveform",
+  //   children: [
+  //     {
+  //       label: "Linear Paths",
+  //       icon: "i-lucide-audio-lines",
+  //       to: { name: "linear-paths" },
+  //     },
+  //     {
+  //       label: "Polar Paths",
+  //       icon: "i-lucide-radius",
+  //       to: { name: "polar-paths" },
+  //     },
+  //   ],
+  // },
 ]);
 </script>
 
