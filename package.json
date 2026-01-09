@@ -55,6 +55,7 @@
     "@nuxt/module-builder": "^1.0.2",
     "@nuxt/scripts": "^0.13.2",
     "@nuxt/test-utils": "^3.21.0",
+    "@nuxt/ui": "^4.3.0",
     "@types/node": "latest",
     "@typescript-eslint/parser": "^8.52.0",
     "@vue/test-utils": "^2.4.6",
