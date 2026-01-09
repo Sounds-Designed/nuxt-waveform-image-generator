@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/compare/v0.0.3...v0.0.4)
+
+### 🩹 Fixes
+
+- Package name ([584f6fb](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/584f6fb))
+
+### ❤️ Contributors
+
+- Alex Scott ([@codetheorist](https://github.com/codetheorist))
+
 ## v0.0.3
 
 [compare changes](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/compare/v0.0.2...v0.0.3)
