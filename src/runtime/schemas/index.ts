@@ -1,5 +1,3 @@
-import * as z from "zod";
-
 export { default as WaveformComponentComponentTypeSchema } from "./WaveformComponentComponentTypeSchema";
 export { default as WaveformComponentFlipOptionsSchema } from "./WaveformComponentFlipOptionsSchema";
 export { default as WaveformComponentPathTypeSchema } from "./WaveformComponentPathTypeSchema";

@@ -1,4 +1,4 @@
-import * as z from "zod";
+import type * as z from "zod";
 import type { BaseWaveformComponentPropsSchema, LinearWaveformComponentPropsSchema, PolarWaveformComponentPropsSchema, SnakeWaveformComponentPropsSchema, SVGModifierPropsSchema, SVGPathSchema, WaveformComponentComponentTypeSchema, WaveformComponentFlipOptionsSchema, WaveformComponentPathTypeSchema, WaveformImageWrapperComponentPropsSchema } from "../schemas";
 
 /**
@@ -85,7 +85,7 @@ export interface IPolarWaveformComponentProps extends IBasePathComponentProps {
 }
 
 export interface ISnakeWaveformComponentProps extends IPolarWaveformComponentProps {
-
+  distance?: number;
 }
 
 /**
