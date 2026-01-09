@@ -47,6 +47,6 @@ const component = computed((): Component => {
 
 <template>
   <div :style="{ 'aspect-ratio': `${width} / ${height}` }" class="w-full">
-    <component :is="component" v-bind="childProps" />
+    <component :is="component" :audio-buffer="audioBuffer" :height="height" :width="width" />
   </div>
 </template>
