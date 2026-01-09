@@ -39,7 +39,7 @@ export const SVGPathSchema = z.object({
 
 export interface IBaseWaveformProps {
   audioBuffer: AudioBuffer,
-  type: string | SVGPathType,
+  type: WaveformComponentPathType,
   channel: number;
   samples: number;
   normalize: boolean;
@@ -76,7 +76,7 @@ export interface ISnakeWaveformProps extends IBaseWaveformProps {
 
 export const LinearWaveformPropsSchema = z.object({
   audioBuffer: z.unknown(),
-  type: z.union([z.string(), SVGPathTypeSchema]),
+  type: z.union([z.string(), WaveformComponentPathTypeSchema]),
   channel: z.number(),
   samples: z.number(),
   normalize: z.boolean(),
@@ -94,7 +94,7 @@ export const LinearWaveformPropsSchema = z.object({
 
 export const PolarWaveformPropsSchema = z.object({
   audioBuffer: z.unknown(),
-  type: z.union([z.string(), SVGPathTypeSchema]),
+  type: z.union([z.string(), WaveformComponentPathTypeSchema]),
   channel: z.number(),
   samples: z.number(),
   normalize: z.boolean(),
@@ -113,7 +113,7 @@ export const PolarWaveformPropsSchema = z.object({
 
 export const SnakeWaveformPropsSchema = z.object({
   audioBuffer: z.unknown(),
-  type: z.union([z.string(), SVGPathTypeSchema]),
+  type: z.union([z.string(), WaveformComponentPathTypeSchema]),
   channel: z.number(),
   samples: z.number(),
   normalize: z.boolean(),
