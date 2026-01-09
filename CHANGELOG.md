@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.12
+
+[compare changes](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/compare/v0.0.11...v0.0.12)
+
+### 🩹 Fixes
+
+- Badges ([412ab42](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/412ab42))
+
+### 🏡 Chore
+
+- Fix filenames part one ([b031b83](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/b031b83))
+- Fix filenames part two ([83727a5](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/83727a5))
+
+### ❤️ Contributors
+
+- Alex Scott ([@codetheorist](https://github.com/codetheorist))
+
 ## v0.0.11
 
 [compare changes](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/compare/v0.0.10...v0.0.11)
