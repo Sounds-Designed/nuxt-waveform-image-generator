@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@sounds-designed/waveform-image-generator-playground",
+  "name": "@sounds-designed/nuxt-waveform-image-generator-playground",
   "type": "module",
   "scripts": {
     "dev": "nuxi dev",

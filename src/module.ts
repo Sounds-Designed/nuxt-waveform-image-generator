@@ -10,7 +10,7 @@ export interface WaveformImageGeneratorOptions extends ModuleOptions {
 
 export default defineNuxtModule<WaveformImageGeneratorOptions>({
   meta: {
-    name: '@sounds-designed/waveform-image-generator',
+    name: '@sounds-designed/nuxt-waveform-image-generator',
     configKey: 'waveformImageGenerator',
   },
   defaults: {
