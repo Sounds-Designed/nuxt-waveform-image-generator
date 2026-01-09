@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import type { ISnakeWaveformComponentProps } from '../types';
+
+const props = withDefaults(defineProps<ISnakeWaveformComponentProps>(), { height: 300, width: 400});
 </script>
 
 <template>
-  <svg class="round" :viewBox="`${-(width / 2)} ${-(height / 2)} ${width} ${height}`">
+  <svg :viewBox="`${-(width / 2)} ${-(height / 2)} ${width} ${height}`">
+    <rect :fill="props.backgroundColor" :x="-(width / 2)" :y="-(height / 2)" :width="width" :height="height" />
   </svg>
 </template>

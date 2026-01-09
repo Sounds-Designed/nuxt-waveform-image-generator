@@ -1,5 +1,6 @@
 import * as z from 'zod'
-import { WaveformComponentComponentTypeSchema, WaveformComponentPathTypeSchema, type WaveformComponentComponentType, type WaveformComponentPathType } from '../../src/runtime/types'
+import type { WaveformComponentComponentType, WaveformComponentPathType } from '../../src/module';
+import { WaveformComponentComponentTypeSchema, WaveformComponentPathTypeSchema } from '../../src/runtime/schemas';
 
 export interface IWaveformCustomizationOptions {
   animation: boolean;

@@ -1,11 +1,13 @@
 import { addComponent, defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
-import type { ModuleOptions } from 'nuxt/schema'
+import type { ModuleOptions } from '@nuxt/schema'
 
 export type * from './runtime/types'
 
 // Module options TypeScript interface definition
 export interface WaveformImageGeneratorOptions extends ModuleOptions {
   enabled?: boolean;
+  defaultRenderHeight: number;
+  defaultRenderWidth: number;
 }
 
 export default defineNuxtModule<WaveformImageGeneratorOptions>({
@@ -15,6 +17,8 @@ export default defineNuxtModule<WaveformImageGeneratorOptions>({
   },
   defaults: {
     enabled: true,
+    defaultRenderHeight: 300,
+    defaultRenderWidth: 400,
   },
   setup(_options, _nuxt) {
     const resolver = createResolver(import.meta.url)

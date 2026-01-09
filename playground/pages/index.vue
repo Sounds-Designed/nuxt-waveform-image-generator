@@ -3,7 +3,7 @@ import { getAudioBufferFromURL } from "@sounds-designed/audio-to-image-utils";
 import AudioFile from "~/assets/audio/test-kick-1.wav";
 import type { SelectItem, TabsItem  } from "@nuxt/ui";
 import { CustomizationOptionsSchema, type CustomizationOptions } from "~/types/schemas";
-import type { WaveformComponentComponentType } from "../../src/module";
+import type { WaveformComponentComponentType, WaveformComponentPathType } from "../../src/module";
 
 const route = useRoute()
 const router = useRouter()
@@ -106,7 +106,7 @@ const backgroundChip = computed(() => ({ backgroundColor: options.backgroundColo
 
 onMounted(async () => {
   activeTab.value = route.query?.tab && tabs.findIndex(tab => tab.slot === route.query?.tab as ComponentTabType) >= 0 ? route.query?.tab as ComponentTabType : "designer"
-  variant.value = route.query?.variant as WaveformComponentComponentType || "linear"
+  variant.value = route.query?.variant as WaveformComponentPathType || "linear"
 
   const audioData = await getAudioBufferFromURL(AudioFile);
   audioBuffer.value = audioData;
@@ -135,7 +135,7 @@ const clearActiveTabWatcher = watch(activeTab, (newTab, oldTab) => {
   if (newTab !== oldTab) router.push({ ...route, query: { ...route.query, tab: newTab } })
 }, {})
 
-const clearVariantWatcher = watch<PathComponentType>(() => options.variant as PathComponentType, (newVariant, oldVariant) => {
+const clearVariantWatcher = watch<WaveformComponentComponentType>(() => options.variant as WaveformComponentComponentType, (newVariant, oldVariant) => {
   if (newVariant !== oldVariant) router.push({ ...route, query: { ...route.query, variant: newVariant } })
 }, {})
 
@@ -255,26 +255,9 @@ v-if="audioBuffer" class="border-primary mb-4 border" :audio-buffer="audioBuffer
               </template>
 
               <template #mod>
-                <modified-linear-path
-v-if="audioBuffer" class="mb-4" :audio-buffer="audioBuffer"
-                  :background-color="options.backgroundColor" :background-opacity="options.backgroundOpacity"
-                  :vertical-padding="options.verticalPadding" :horizontal-padding="options.horizontalPadding"
-                  :height="options.height" :variant="options.variant" :samples="samples" :size="options.size"
-                  :normalize="options.normalize" :thickness="options.lineThickness"
-                  :path-height-scale="options.pathHeightScale" :path-width-scale="options.pathWidthScale"
-                  :svg="{ stroke: 'url(#logograd)' }" />
               </template>
 
               <template #original>
-                <original-linear-path
-v-if="audioBuffer" class="mb-4" :animation="options.animation"
-                  :animation-frames="options.frames" :audio-buffer="audioBuffer"
-                  :background-color="options.backgroundColor" :background-opacity="options.backgroundOpacity"
-                  :vertical-padding="options.verticalPadding" :horizontal-padding="options.horizontalPadding"
-                  :height="options.height" :variant="options.variant" :samples="samples" :size="options.size"
-                  :normalize="options.normalize" :thickness="options.lineThickness"
-                  :path-height-scale="options.pathHeightScale" :path-width-scale="options.pathWidthScale"
-                  :svg="{ stroke: 'url(#logograd)' }" />
               </template>
             </UTabs>
           </div>
