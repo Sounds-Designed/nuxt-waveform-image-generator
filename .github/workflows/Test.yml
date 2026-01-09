@@ -1,4 +1,4 @@
-name: lint
+name: Test
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  lint:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,7 +22,10 @@ jobs:
       - run: npm i -g --force corepack@latest && corepack enable
 
       - name: Install dependencies
-        run: npx nypm@latest i
+        run: npx nypm@latest i && cd ./playground && npx nypm@latest i && cd ..
 
-      - name: Lint
-        run: npm run lint
+      - name: Playground prepare
+        run: npm run dev:prepare
+
+      - name: Test
+        run: npm run test
