@@ -69,8 +69,8 @@ export interface IBasePathComponentProps {
 
 export interface ILinearWaveformComponentProps extends IBasePathComponentProps {
   backgroundColor?: string;
-  height?: number;
-  width?: number;
+  height: number;
+  width: number;
   top?: number;
   left?: number;
 }
