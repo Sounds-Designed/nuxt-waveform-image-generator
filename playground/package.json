@@ -8,15 +8,12 @@
     "generate": "nuxi generate"
   },
   "dependencies": {
-    "@nuxt/image": "^2.0.0",
-    "nuxt": "^4.2.2"
-  },
-  "devDependencies": {
     "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.2.0",
     "@iconify-json/lucide": "^1.2.82",
     "@iconify-json/simple-icons": "^1.2.63",
     "@jest/globals": "^30.2.0",
+    "@nuxt/image": "^2.0.0",
     "@nuxt/scripts": "^0.13.2",
     "@nuxt/test-utils": "^3.21.0",
     "@nuxt/ui": "^4.3.0",
@@ -42,5 +39,8 @@
     "tsup": "^8.5.1",
     "typescript": "~5.9.3",
     "vitest": "^3.2.4"
+  },
+  "devDependencies": {
+
   }
 }
