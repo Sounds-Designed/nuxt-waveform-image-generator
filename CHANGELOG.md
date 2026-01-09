@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.6
+
+[compare changes](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/compare/v0.0.5...v0.0.6)
+
+### 🩹 Fixes
+
+- Lint issues ([9ffe216](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/9ffe216))
+- Test issues ([d1970fe](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/d1970fe))
+
+### 🏡 Chore
+
+- **release:** V0.0.5 ([8d3a617](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/8d3a617))
+
+### ❤️ Contributors
+
+- Alex Scott ([@codetheorist](https://github.com/codetheorist))
+
 ## v0.0.5
 
 [compare changes](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/compare/v0.0.4...v0.0.5)
