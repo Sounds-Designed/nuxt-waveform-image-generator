@@ -7,8 +7,22 @@ declare module '#build/app.config' {
 
 import * as z from 'zod'
 
-export const PathComponentTypeSchema = z.enum(["linear", "polar", "snake"]);
-export const SVGPathTypeSchema = z.enum(["bars", "steps", "mirror"]);
+export const WaveformComponentComponentTypeSchema = z.enum(["linear", "polar", "snake"]);
+export const WaveformComponentPathTypeSchema = z.enum(["bars", "steps", "mirror"]);
+export const WaveformComponentFlipOptionsSchema = z.enum(["both", "horizontal", "none", "vertical"])
+
+export interface ISVGPath {
+  d: string;
+  r?: string;
+  sr?: string;
+  er?: string;
+  deg?: number;
+  sdeg?: number;
+  edeg?: number;
+  minshow?: number;
+  maxshow?: number;
+  normalize?: boolean;
+}
 
 export const SVGPathSchema = z.object({
   d: z.string(),
@@ -21,7 +35,44 @@ export const SVGPathSchema = z.object({
   minshow: z.number().positive().max(1).optional(),
   maxshow: z.number().positive().max(1).optional(),
   normalize: z.boolean().optional()
-})
+}) satisfies z.ZodType<SVGPathSchema>
+
+export interface IBaseWaveformProps {
+  audioBuffer: AudioBuffer,
+  type: string | SVGPathType,
+  channel: number;
+  samples: number;
+  normalize: boolean;
+  svgPaths: SVGPath[],
+  animation: boolean;
+  animationFrames: number;
+  top: number;
+  left: number;
+}
+
+export interface ILinearWaveformProps extends IBaseWaveformProps {
+  distance: number;
+  startDegrees: number;
+  endDegrees: number;
+  invertDegrees: boolean;
+  invertPath: boolean;
+}
+
+export interface IPolarWaveformProps extends IBaseWaveformProps {
+  distance: number;
+  startDegrees: number;
+  endDegrees: number;
+  invertDegrees: boolean;
+  invertPath: boolean;
+}
+
+export interface ISnakeWaveformProps extends IBaseWaveformProps {
+  distance: number;
+  startDegrees: number;
+  endDegrees: number;
+  invertDegrees: boolean;
+  invertPath: boolean;
+}
 
 export const LinearWaveformPropsSchema = z.object({
   audioBuffer: z.unknown(),
@@ -39,7 +90,7 @@ export const LinearWaveformPropsSchema = z.object({
   invertPath: z.boolean(),
   animation: z.boolean(),
   animationFrames: z.number(),
-})
+}) satisfies z.ZodType<ILinearWaveformProps>
 
 export const PolarWaveformPropsSchema = z.object({
   audioBuffer: z.unknown(),
@@ -58,7 +109,7 @@ export const PolarWaveformPropsSchema = z.object({
   invertPath: z.boolean(),
   animation: z.boolean(),
   animationFrames: z.number(),
-})
+}) satisfies z.ZodType<IPolarWaveformProps>
 
 export const SnakeWaveformPropsSchema = z.object({
   audioBuffer: z.unknown(),
@@ -77,20 +128,22 @@ export const SnakeWaveformPropsSchema = z.object({
   invertPath: z.boolean(),
   animation: z.boolean(),
   animationFrames: z.number(),
-})
+}) satisfies z.ZodType<ISnakeWaveformProps>
 
-export type ProcessSampleVolumeOptions = {
+export interface ProcessSampleVolumeOptions {
   normalize: boolean;
   scale: number;
 }
 
-export type GradientFillAttributes = {
+export interface GradientFillAttributes {
   offset: number;
   style: string;
 }
 
-export type PathComponentType = z.output<typeof PathComponentTypeSchema>
-export type SVGPathType = z.output<typeof SVGPathTypeSchema>
+export type WaveformComponentComponentType = z.output<typeof WaveformComponentComponentTypeSchema>
+export type WaveformComponentFlipOptions = z.output<typeof WaveformComponentFlipOptionsSchema>
+export type WaveformComponentPathType = z.output<typeof WaveformComponentPathTypeSchema>
+
 export type LinearWaveformProps = z.output<typeof LinearWaveformPropsSchema>
 export type PolarWaveformProps = z.output<typeof PolarWaveformPropsSchema>
 export type SnakeWaveformProps = z.output<typeof SnakeWaveformPropsSchema>

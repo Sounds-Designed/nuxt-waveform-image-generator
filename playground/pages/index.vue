@@ -2,9 +2,9 @@
 import { getAudioBufferFromURL } from "@sounds-designed/audio-to-image-utils";
 import AudioFile from "~/assets/audio/test-kick-1.wav";
 import type { SelectItem } from "@nuxt/ui";
-import { CustomizationOptionsSchema, type CustomizationOptions, type GradientFillAttributes } from "~/types/schemas";
+import { CustomizationOptionsSchema, type CustomizationOptions } from "~/types/schemas";
 import type { TabsItem } from '@nuxt/ui'
-import type { PathComponentType } from "../../src/module";
+import type { GradientFillAttributes, PathComponentType } from "../../src/module";
 
 const route = useRoute()
 const router = useRouter()

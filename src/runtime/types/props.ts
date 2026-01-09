@@ -1,22 +1,24 @@
-export type SVGModifierProps = {
+import type { WaveformComponentPathType, WaveformComponentFlipOptions } from "./app.config";
+
+export interface SVGModifierProps {
   stroke?: string,
   strokeWidth?: number;
   fill?: string
 }
 
-export type BasePathComponentProps = {
+export interface BasePathComponentProps {
   animation?: boolean;
   audioBuffer: AudioBuffer | null;
   channel?: number;
   frames?: number;
   normalize?: boolean;
   samples?: number;
-  flip?: "vertical" | "horizontal" | "both" | 'none',
+  flip?: WaveformComponentFlipOptions,
   svg?: SVGModifierProps
-  type?: "steps" | "bars" | "mirror";
+  type?: WaveformComponentPathType;
 }
 
-export type LinearPathComponentProps = BasePathComponentProps & {
+export interface LinearPathComponentProps extends BasePathComponentProps {
   backgroundColor?: string;
   height?: number;
   width?: number;
@@ -24,7 +26,7 @@ export type LinearPathComponentProps = BasePathComponentProps & {
   left?: number;
 }
 
-export type PolarPathComponentProps = BasePathComponentProps & {
+export interface PolarPathComponentProps extends BasePathComponentProps {
     animationFrames: number;
     channel: number;
     distance: number;
