@@ -1,6 +1,6 @@
 {
   "name": "@sounds-designed/nuxt-waveform-image-generator",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A Nuxt module for converting WAV files into images using the native AudioContext API",
   "repository": {
     "type": "git",
