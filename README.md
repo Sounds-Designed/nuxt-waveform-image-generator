@@ -22,9 +22,12 @@ My new Nuxt module for doing amazing things.
 ## Features
 
 <!-- Highlight some of the features your module provide here -->
-- ⛰ &nbsp;Foo
-- 🚠 &nbsp;Bar
-- 🌲 &nbsp;Baz
+- 🔈 &nbsp;Linear Waveforms
+- 🔈 &nbsp;Polar Waveforms
+- 🔈 &nbsp;Animated Waveforms
+- 🔈 &nbsp;Adjustable Image Quality
+- 🔈 &nbsp;Audio Downsampling
+- 🔈 &nbsp;Custom Styled Waveforms
 
 ## Quick Setup
 
@@ -34,7 +37,7 @@ Install the module to your Nuxt application with one command:
 npx nuxi module add @sounds-designed/waveform-image-generator
 ```
 
-That's it! You can now use Waveform Image Generator in your Nuxt app ✨
+That's it! You can now use the Waveform Image Generator module in your Nuxt app ✨
 
 
 ## Contribution
