@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v0.0.10
+
+[compare changes](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/compare/v0.0.9...v0.0.10)
+
+### 🚀 Enhancements
+
+- Improve Github actions and add badges to `README.md` ([682a709](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/682a709))
+
+### 🩹 Fixes
+
+- Unnecessary package install in Github action ([4e06b85](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/4e06b85))
+
+### 🏡 Chore
+
+- **release:** V0.0.9 ([b83a7fd](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/b83a7fd))
+
+### ❤️ Contributors
+
+- Alex Scott ([@codetheorist](https://github.com/codetheorist))
+
 ## v0.0.9
 
 [compare changes](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/compare/v0.0.8...v0.0.9)
