@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@nuxt/kit": "^4.2.2",
-    "@sounds-designed/audio-to-image-utils": "file:../@sounds-designed/audio-to-image-utils",
+    "@sounds-designed/audio-to-image-utils": "^0.0.2",
     "change-case": "^5.4.4",
     "zod": "^4.3.5"
   },
