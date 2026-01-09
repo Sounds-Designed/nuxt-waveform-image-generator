@@ -32,6 +32,11 @@ export default defineNuxtModule<WaveformImageGeneratorOptions>({
     })
 
     addComponent({
+      name: 'SnakeWaveformImage',
+      filePath: resolver.resolve('runtime/components/SnakeWaveformImage.vue'),
+    })
+
+    addComponent({
       name: 'WaveformImage',
       filePath: resolver.resolve('runtime/components/WaveformImage.vue'),
     })
