@@ -12,8 +12,8 @@ Find and replace all on all files (CMD+SHIFT+F):
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
-[![Lints](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/actions/workflows/lint.yml)
-[![Tests](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/actions/workflows/test.yml)
+[![Lints][lint-src]][lint-href]
+[![Tests][test-src]][test-href]
 
 
 My new Nuxt module for doing amazing things.
@@ -87,3 +87,9 @@ That's it! You can now use the Waveform Image Generator module in your Nuxt app 
 
 [nuxt-src]: https://img.shields.io/badge/Nuxt-020420?logo=nuxt
 [nuxt-href]: https://nuxt.com
+
+[lint-src]: https://github.com/Sounds-Designed/nuxt-waveform-image-generator/actions/workflows/lint.yml/badge.svg?branch=main
+[lint-href]: https://github.com/Sounds-Designed/nuxt-waveform-image-generator/actions/workflows/lint.yml
+
+[test-src]: https://github.com/Sounds-Designed/nuxt-waveform-image-generator/actions/workflows/test.yml/badge.svg?branch=main
+[test-href]: https://github.com/Sounds-Designed/nuxt-waveform-image-generator/actions/workflows/test.yml
