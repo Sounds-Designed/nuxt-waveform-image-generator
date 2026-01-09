@@ -18,7 +18,7 @@ export interface BasePathComponentProps {
   type?: WaveformComponentPathType;
 }
 
-export interface LinearPathComponentProps extends BasePathComponentProps {
+export interface LinearWaveformComponentProps extends BasePathComponentProps {
   backgroundColor?: string;
   height?: number;
   width?: number;
@@ -26,7 +26,20 @@ export interface LinearPathComponentProps extends BasePathComponentProps {
   left?: number;
 }
 
-export interface PolarPathComponentProps extends BasePathComponentProps {
+export interface PolarWaveformComponentProps extends BasePathComponentProps {
+    animationFrames: number;
+    channel: number;
+    distance: number;
+    invertDegrees?: boolean;
+    invertPath?: boolean;
+    length: number;
+    normalize: boolean;
+    samples: number;
+    startDegrees: number;
+    endDegrees: number;
+}
+
+export interface SnakeWaveformComponentProps extends BasePathComponentProps {
     animationFrames: number;
     channel: number;
     distance: number;
