@@ -1,6 +1,37 @@
 # Changelog
 
 
+## v0.0.5
+
+[compare changes](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/compare/v0.0.4...v0.0.5)
+
+### 🚀 Enhancements
+
+- Add `SnakeWaveformComponentProps` interface ([a800fcc](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/a800fcc))
+- Zod schemas ([a888f03](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/a888f03))
+- New module options ([5b8c5f8](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/5b8c5f8))
+
+### 🩹 Fixes
+
+- Repository field in package manifest ([abd1214](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/abd1214))
+- NPM lock file ([d23c4ab](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/d23c4ab))
+- Module file import ([4e03e8a](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/4e03e8a))
+- Type definitions ([39e09f9](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/39e09f9))
+- Types ([3a6fc10](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/3a6fc10))
+- Playground typescript issues ([f3e0830](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/f3e0830))
+- Component prop interfaces ([67d07a1](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/67d07a1))
+- Child props ([224f1cf](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/224f1cf))
+- Linear path type schema ([0919a12](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/0919a12))
+- Lint issues ([9ffe216](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/9ffe216))
+
+### 🏡 Chore
+
+- Merge dev ([8ec9475](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/commit/8ec9475))
+
+### ❤️ Contributors
+
+- Alex Scott ([@codetheorist](https://github.com/codetheorist))
+
 ## v0.0.4
 
 [compare changes](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/compare/v0.0.3...v0.0.4)
