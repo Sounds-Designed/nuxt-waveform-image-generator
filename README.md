@@ -12,6 +12,9 @@ Find and replace all on all files (CMD+SHIFT+F):
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
+[![Lints](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/actions/workflows/lint.yml)
+[![Tests](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Sounds-Designed/nuxt-waveform-image-generator/actions/workflows/test.yml)
+
 
 My new Nuxt module for doing amazing things.
 
