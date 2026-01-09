@@ -38,7 +38,7 @@ export const getFilterData = (frames: Array<Float32Array>, samples: number): num
     for (let i = 0; i < samples; i++) {
       if (i >= samples) break;
 
-      let blockStart: number = blockSize * i; // the location of the first sample in the block
+      const blockStart: number = blockSize * i; // the location of the first sample in the block
       let sum: number = 0;
 
       for (let j = 0; j < blockSize; j++) {

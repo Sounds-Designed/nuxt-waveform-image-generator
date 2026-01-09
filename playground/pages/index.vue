@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { getAudioBufferFromURL } from "@sounds-designed/audio-to-image-utils";
 import AudioFile from "~/assets/audio/test-kick-1.wav";
-import type { SelectItem } from "@nuxt/ui";
+import type { SelectItem, TabsItem  } from "@nuxt/ui";
 import { CustomizationOptionsSchema, type CustomizationOptions } from "~/types/schemas";
-import type { TabsItem } from '@nuxt/ui'
-import type { GradientFillAttributes, PathComponentType } from "../../src/module";
+import type { GradientFillAttributes, WaveformComponentComponentType } from "../../src/module";
 
 const route = useRoute()
 const router = useRouter()
@@ -36,7 +35,6 @@ const variant = computed({
 })
 
 const BlackHoodie = "/images/awdis-college-hoodie-jet-black.png";
-const WhiteHoodie = "/images/awdis-college-hoodie-arctic-white.png";
 
 const _defaultOptions: CustomizationOptions = {
   animation: false,
@@ -61,8 +59,6 @@ const _defaultOptions: CustomizationOptions = {
 const options = reactive<CustomizationOptions>({ ..._defaultOptions });
 
 const audioBuffer: Ref<AudioBuffer | null> = ref(null);
-const channel = ref(0);
-const normalize = ref(true);
 
 const fill: Ref<string | GradientFillAttributes[]> = ref([
   { offset: 0, style: "stop-color:rgb(0,255,10);stop-opacity:1.00" },
@@ -72,15 +68,9 @@ const fill: Ref<string | GradientFillAttributes[]> = ref([
   { offset: 100, style: "stop-color:rgb(233,30,99);stop-opacity:1.00" },
 ]);
 
-const fillMode: Ref<"solid" | "gradient"> = computed(() => {
-  return typeof fill.value === "string" ? "solid" : "gradient";
-});
-
-const imageTypes = ref<SelectItem[]>([
-  { label: "Linear", value: "linear" },
-  { label: "Polar", value: "polar" },
-  { label: "Snake", value: "snake" },
-]);
+// const fillMode: Ref<"solid" | "gradient"> = computed(() => {
+//   return typeof fill.value === "string" ? "solid" : "gradient";
+// });
 
 const getSamples = (_audioBuffer: AudioBuffer | null, downsampleFactor: number) =>
   _audioBuffer ? Math.floor(_audioBuffer.length / downsampleFactor) : 1;
@@ -116,7 +106,7 @@ const backgroundChip = computed(() => ({ backgroundColor: options.backgroundColo
 
 onMounted(async () => {
   activeTab.value = route.query?.tab && tabs.findIndex(tab => tab.slot === route.query?.tab as ComponentTabType) >= 0 ? route.query?.tab as ComponentTabType : "designer"
-  variant.value = route.query?.variant as PathComponentType || "linear"
+  variant.value = route.query?.variant as WaveformComponentComponentType || "linear"
 
   const audioData = await getAudioBufferFromURL(AudioFile);
   audioBuffer.value = audioData;
@@ -159,7 +149,8 @@ onUnmounted(() => {
 <template>
   <UPage>
     <UContainer class="max-w-8xl">
-      <UPageHeader title="Linear Paths"
+      <UPageHeader
+title="Linear Paths"
         description="A selection of linear paths that can be generated using this component" headline="Examples" />
 
       <USeparator class="mb-4" />
@@ -183,7 +174,7 @@ onUnmounted(() => {
               </UFormField>
 
               <UFormField label="Background Opacity">
-                <USlider name="backgroundOpacity" v-model="options.backgroundOpacity" :step="0.05" :min="0" :max="1" />
+                <USlider v-model="options.backgroundOpacity" name="backgroundOpacity" :step="0.05" :min="0" :max="1" />
               </UFormField>
 
               <UFormField label="Channel">
@@ -191,36 +182,39 @@ onUnmounted(() => {
               </UFormField>
 
               <UFormField label="Sample Count">
-                <USlider name="downsampleFactor" v-model="options.downsampleFactor"
+                <USlider
+v-model="options.downsampleFactor" name="downsampleFactor"
                   :default-value="options.downsampleFactor"
                   :min="audioBuffer?.length ? Math.min(Math.sqrt(audioBuffer.length), 4) : 1"
                   :max="audioBuffer?.length ? audioBuffer.length / 32 : 1" />
               </UFormField>
 
               <UFormField label="Line Thickness">
-                <USlider name="lineThickness" v-model="options.lineThickness" :min="1" :max="32" />
+                <USlider v-model="options.lineThickness" name="lineThickness" :min="1" :max="32" />
               </UFormField>
 
               <UFormField label="Height">
-                <USlider name="height" v-model="options.pathHeightScale" :step="0.01" :min="0" :max="1" />
+                <USlider v-model="options.pathHeightScale" name="height" :step="0.01" :min="0" :max="1" />
               </UFormField>
 
               <UFormField label="Width">
-                <USlider name="width" v-model="options.pathWidthScale" :step="0.01" :min="0" :max="1" />
+                <USlider v-model="options.pathWidthScale" name="width" :step="0.01" :min="0" :max="1" />
               </UFormField>
 
               <UFormField label="Horizontal Padding">
-                <USlider name="horizontalPadding" v-model="options.horizontalPadding" :step="2" :min="-options.width"
+                <USlider
+v-model="options.horizontalPadding" name="horizontalPadding" :step="2" :min="-options.width"
                   :max="options.width" />
               </UFormField>
 
               <UFormField label="Vertical Padding">
-                <USlider name="verticalPadding" v-model="options.verticalPadding" :step="2" :min="-options.height"
+                <USlider
+v-model="options.verticalPadding" name="verticalPadding" :step="2" :min="-options.height"
                   :max="options.height" />
               </UFormField>
 
               <UFormField label="Normalize">
-                <USwitch name="normalize" v-model="options.normalize" />
+                <USwitch v-model="options.normalize" name="normalize" />
               </UFormField>
               <UButton @click="onResetClicked">Reset</UButton>
             </UForm>
@@ -232,10 +226,11 @@ onUnmounted(() => {
             </UFormField>
 
             <!-- Waveform UI Component Renderer -->
-            <UTabs class="md:col-span-2" v-model="activeTab" :items="tabs">
+            <UTabs v-model="activeTab" class="md:col-span-2" :items="tabs">
               <template #designer>
                 <div class="relative w-[100%] bg-[#1a1d1e]">
-                  <WaveformImage v-if="audioBuffer" class="absolute mb-4"
+                  <WaveformImage
+v-if="audioBuffer" class="absolute mb-4"
                     :style="{ left: '24.4%', top: '25%', width: '51.4%', zIndex: '10' }" :audio-buffer="audioBuffer"
                     :background-color="options.backgroundColor" :background-opacity="options.backgroundOpacity"
                     :vertical-padding="options.verticalPadding" :horizontal-padding="options.horizontalPadding"
@@ -243,13 +238,15 @@ onUnmounted(() => {
                     :normalize="options.normalize" :thickness="options.lineThickness"
                     :path-height-scale="options.pathHeightScale" :path-width-scale="options.pathWidthScale" />
 
-                  <NuxtImg height="1200" width="1024" :style="{ left: 0, top: 0, width: '100%', zIndex: '20' }"
+                  <NuxtImg
+height="1200" width="1024" :style="{ left: 0, top: 0, width: '100%', zIndex: '20' }"
                     :src="BlackHoodie" />
                 </div>
               </template>
 
               <template #bespoke>
-                <WaveformImage v-if="audioBuffer" class="border-primary mb-4 border" :audio-buffer="audioBuffer"
+                <WaveformImage
+v-if="audioBuffer" class="border-primary mb-4 border" :audio-buffer="audioBuffer"
                   :background-color="options.backgroundColor" :background-opacity="options.backgroundOpacity"
                   :vertical-padding="options.verticalPadding" :horizontal-padding="options.horizontalPadding"
                   :height="options.height" :variant="options.variant" :samples="samples" :size="options.size"
@@ -258,7 +255,8 @@ onUnmounted(() => {
               </template>
 
               <template #mod>
-                <modified-linear-path v-if="audioBuffer" class="mb-4" :audio-buffer="audioBuffer"
+                <modified-linear-path
+v-if="audioBuffer" class="mb-4" :audio-buffer="audioBuffer"
                   :background-color="options.backgroundColor" :background-opacity="options.backgroundOpacity"
                   :vertical-padding="options.verticalPadding" :horizontal-padding="options.horizontalPadding"
                   :height="options.height" :variant="options.variant" :samples="samples" :size="options.size"
@@ -268,7 +266,8 @@ onUnmounted(() => {
               </template>
 
               <template #original>
-                <original-linear-path v-if="audioBuffer" class="mb-4" :animation="options.animation"
+                <original-linear-path
+v-if="audioBuffer" class="mb-4" :animation="options.animation"
                   :animation-frames="options.frames" :audio-buffer="audioBuffer"
                   :background-color="options.backgroundColor" :background-opacity="options.backgroundOpacity"
                   :vertical-padding="options.verticalPadding" :horizontal-padding="options.horizontalPadding"

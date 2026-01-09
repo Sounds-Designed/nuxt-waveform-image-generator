@@ -23,7 +23,7 @@ interface WaveformImageProps {
 
 type ChildWaveformImageProps = Omit<WaveformImageProps, "variant">;
 
-const props = withDefaults(defineProps<WaveformImageProps>(), { variant: "linear", normalize: false, height: 300, width: 400, horizontalPadding: 0, verticalPadding: 0, samples: 1, pathHeightScale: 1, pathWidthScale: 1, thickness: 1 })
+const props = withDefaults(defineProps<WaveformImageProps>(), { backgroundColor: "#fefefe", backgroundOpacity: 0, color: undefined, variant: "linear", normalize: false, height: 300, width: 400, horizontalPadding: 0, verticalPadding: 0, samples: 1, pathHeightScale: 1, pathWidthScale: 1, thickness: 1 })
 
 const childProps: ComputedRef<ChildWaveformImageProps> = computed((): ChildWaveformImageProps => {
   return props as ChildWaveformImageProps

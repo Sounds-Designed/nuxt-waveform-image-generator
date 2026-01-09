@@ -32,12 +32,14 @@
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
+    "fix": "eslint . --fix",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
     "@nuxt/kit": "^4.2.2",
+    "@nuxt/schema": "^4.2.2",
     "@sounds-designed/audio-to-image-utils": "^0.0.2",
     "change-case": "^5.4.4",
     "zod": "^4.3.5"

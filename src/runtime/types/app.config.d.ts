@@ -1,11 +1,11 @@
+import * as z from 'zod'
+
 declare module '#build/app.config' {
   import type { AppConfig } from '@nuxt/schema'
 
   const _default: AppConfig
   export default _default
 }
-
-import * as z from 'zod'
 
 export const WaveformComponentComponentTypeSchema = z.enum(["linear", "polar", "snake"]);
 export const WaveformComponentPathTypeSchema = z.enum(["bars", "steps", "mirror"]);

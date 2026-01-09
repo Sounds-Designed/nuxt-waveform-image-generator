@@ -37,9 +37,11 @@ const items = computed(() => [
 
 <template>
   <UApp>
-    <UHeader :ui="{ left: 'lg:flex-initial', container: 'gap-8', center: 'grow', title: 'text-green-alt' }"
+    <UHeader
+:ui="{ left: 'lg:flex-initial', container: 'gap-8', center: 'grow', title: 'text-green-alt' }"
       title="Waveform Image Generator">
-      <UNavigationMenu variant="link" class="w-full" color="primary" type="single" :items="items"
+      <UNavigationMenu
+variant="link" class="w-full" color="primary" type="single" :items="items"
         :disable-pointer-leave-close="true">
       </UNavigationMenu>
 
