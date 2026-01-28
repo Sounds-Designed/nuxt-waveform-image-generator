@@ -1,5 +1,5 @@
 import type * as z from "zod";
-import type { BaseWaveformComponentPropsSchema, LinearWaveformComponentPropsSchema, PolarWaveformComponentPropsSchema, SnakeWaveformComponentPropsSchema, SVGModifierPropsSchema, SVGPathSchema, WaveformComponentComponentTypeSchema, WaveformComponentFlipOptionsSchema, WaveformComponentPathTypeSchema, WaveformImageWrapperComponentPropsSchema } from "../schemas";
+import type { BaseWaveformComponentPropsSchema, LinearWaveformComponentPropsSchema, PolarWaveformComponentPropsSchema, SnakeWaveformComponentPropsSchema, SVGModifierPropsSchema, SVGPathSchema, WaveformComponentComponentTypeSchema, WaveformComponentFlipOptionsSchema, WaveformComponentPathTypeSchema, WaveformCustomizationOptionsSchema, WaveformImageWrapperComponentPropsSchema } from "../schemas";
 
 /**
  * Interfaces
@@ -38,7 +38,7 @@ export interface IBasePathComponentProps {
   /**
    * One requirement, the audio buffer to display as a waveform image
    */
-  audioBuffer: unknown;
+  audioBuffer: AudioBuffer;
   type?: WaveformComponentPathType;
   /**
    * Audio Processing Options
@@ -69,10 +69,12 @@ export interface IBasePathComponentProps {
 
 export interface ILinearWaveformComponentProps extends IBasePathComponentProps {
   backgroundColor?: string;
-  height: number;
-  width: number;
+  height?: number;
+  width?: number;
   top?: number;
   left?: number;
+  pathHeightScale?: number;
+  pathWidthScale?: number;
 }
 
 export interface IPolarWaveformComponentProps extends IBasePathComponentProps {
@@ -86,6 +88,27 @@ export interface IPolarWaveformComponentProps extends IBasePathComponentProps {
 
 export interface ISnakeWaveformComponentProps extends IPolarWaveformComponentProps {
   distance?: number;
+}
+
+export interface IWaveformCustomizationOptions {
+  animation: boolean;
+  backgroundColor?: string;
+  backgroundOpacity?: number;
+  channel: number;
+  downsampleFactor: number;
+  frames: number;
+  height: number;
+  width: number;
+  verticalPadding: number;
+  horizontalPadding: number;
+  normalize: boolean;
+  variant: WaveformComponentComponentType,
+  type: WaveformComponentPathType,
+  lineThickness: number;
+  size: number;
+  pathHeightScale: number;
+  pathWidthScale: number;
+  onOptionsUpdated?: Function
 }
 
 /**
@@ -104,3 +127,5 @@ export type SnakeWaveformProps = z.output<typeof SnakeWaveformComponentPropsSche
 
 export type SVGModifierProps = z.output<typeof SVGModifierPropsSchema>
 export type SVGPath = z.output<typeof SVGPathSchema>
+
+export type WaveformCustomizationOptions = z.output<typeof WaveformCustomizationOptionsSchema>

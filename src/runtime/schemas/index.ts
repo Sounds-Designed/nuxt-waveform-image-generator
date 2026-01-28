@@ -11,3 +11,4 @@ export { default as PolarWaveformComponentPropsSchema } from "./PolarWaveformCom
 export { default as SnakeWaveformComponentPropsSchema } from "./SnakeWaveformComponentPropsSchema";
 
 export { default as WaveformImageWrapperComponentPropsSchema } from "./WaveformImageWrapperComponentPropsSchema";
+export { default as WaveformCustomizationOptionsSchema } from "./WaveformCustomizationOptionsSchema";
